@@ -53,8 +53,8 @@ int main()
     printf("\nВік: %u", age);
     printf("\nСеместр: %u", semestr);
     printf("\n---------------");
-    printf("\nВступний бал: %.1f", admissionScore);
-    printf("\nСередня оцінка = %.2f", averageGrade);
+    printf("\nВступний бал: %.1lf", admissionScore);
+    printf("\nСередня оцінка = %.2lf", averageGrade);
     printf("\n");
     return 0;
 }
