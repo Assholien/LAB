@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <Windows.h>
+#include <stdlib.h>
+#define Name "Денис"
+#define LastName "Коваленко"
+#define GroupName "РЕ-22"
+#define Faculty "РТФ"
+#define University "КПІ"
+
+int main()
+{
+    SetConsoleCP (65001); // зміна кодової сторінки на UTF-8
+    SetConsoleOutputCP (65001); // зміна кодової сторінки на UTF-8
+    unsigned int age; // оголошення змінної
+    // unsinged int age=18; Ініціалізація змінної
+    unsigned int semestr;
+    float admissionScore;
+    float grade1;
+    float grade2;
+    float grade3;
+    float grade4;
+    float grade5;
+    double averageGrade;
+
+    printf("%s %s, виконайте наступні дії.\n", Name, LastName);
+    printf("Введіть номер семестру:");
+    scanf("%u", &semestr);
+    printf("Введіть свій вступний бал:");
+    scanf("%f", &admissionScore);
+    printf("Введіть оцінку за предмет №1:");
+    scanf("%d", &grade1);
+    printf("Введіть оцінку за предмет №2:");
+    scanf("%d", &grade2);
+    printf("Введіть оцінку за предмет №3:");
+    scanf("%d", &grade3);
+    printf("Введіть оцінку за предмет №4:");
+    scanf("%d", &grade4);
+    printf("Введіть оцінку за предмет №5:");
+    scanf("%d", &grade5);
+    printf("Введіть свій вік:");
+    scanf("%u", &age);
+    averageGrade = (float)(grade1 + grade2 + grade3 + grade4 + grade5) / 5;
+    system("cls");
+    printf("\n***************");
+    printf("\n===============");
+    printf("\n%s", University);
+    printf("\n%s", Faculty);
+    printf("\n%s", GroupName);
+    printf("\n---------------");
+    printf("\nСтудент: %s %s", Name, LastName );
+    printf("\nВік: %u", age);
+    printf("\nСеместр: %u", semestr);
+    printf("\n---------------");
+    printf("\nВступний бал: %.1f", admissionScore);
+    printf("\nСередня оцінка = %.2f", averageGrade);
+    printf("\n");
+    return 0;
+}
