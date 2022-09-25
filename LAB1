@@ -15,11 +15,11 @@ int main()
     // unsinged int age=18; Ініціалізація змінної
     unsigned int semestr;
     float admissionScore;
-    float grade1;
-    float grade2;
-    float grade3;
-    float grade4;
-    float grade5;
+    double grade1;
+    double grade2;
+    double grade3;
+    double grade4;
+    double grade5;
     double averageGrade;
 
     printf("%s %s, виконайте наступні дії.\n", Name, LastName);
@@ -28,18 +28,18 @@ int main()
     printf("Введіть свій вступний бал:");
     scanf("%f", &admissionScore);
     printf("Введіть оцінку за предмет №1:");
-    scanf("%d", &grade1);
+    scanf("%lf", &grade1);
     printf("Введіть оцінку за предмет №2:");
-    scanf("%d", &grade2);
+    scanf("%lf", &grade2);
     printf("Введіть оцінку за предмет №3:");
-    scanf("%d", &grade3);
+    scanf("%lf", &grade3);
     printf("Введіть оцінку за предмет №4:");
-    scanf("%d", &grade4);
+    scanf("%lf", &grade4);
     printf("Введіть оцінку за предмет №5:");
-    scanf("%d", &grade5);
+    scanf("%lf", &grade5);
     printf("Введіть свій вік:");
     scanf("%u", &age);
-    averageGrade = (float)(grade1 + grade2 + grade3 + grade4 + grade5) / 5;
+    averageGrade = (double)(grade1 + grade2 + grade3 + grade4 + grade5) / 5;
     system("cls");
     printf("\n***************");
     printf("\n===============");
