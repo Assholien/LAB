@@ -6,6 +6,7 @@
 #define GroupName "РЕ-22"
 #define Faculty "РТФ"
 #define University "КПІ"
+#define Grade "Введіть оцінку за предмет №"
 
 int main()
 {
@@ -17,7 +18,7 @@ int main()
     float admissionScore;
     double grade1;
     double grade2;
-    double grade3;
+    float grade3;
     double grade4;
     double grade5;
     double averageGrade;
@@ -27,15 +28,15 @@ int main()
     scanf("%u", &semestr);
     printf("Введіть свій вступний бал:");
     scanf("%f", &admissionScore);
-    printf("Введіть оцінку за предмет №1:");
+    printf("%s1:", Grade);
     scanf("%lf", &grade1);
-    printf("Введіть оцінку за предмет №2:");
+    printf("%s2:", Grade);
     scanf("%lf", &grade2);
-    printf("Введіть оцінку за предмет №3:");
+    printf("%s3:", Grade);
     scanf("%lf", &grade3);
-    printf("Введіть оцінку за предмет №4:");
+    printf("%s4:", Grade);
     scanf("%lf", &grade4);
-    printf("Введіть оцінку за предмет №5:");
+    printf("%s5:", Grade);
     scanf("%lf", &grade5);
     printf("Введіть свій вік:");
     scanf("%u", &age);
