@@ -27,7 +27,7 @@ int main()
     printf("Введіть номер семестру:");
     scanf("%u", &semestr);
     printf("Введіть свій вступний бал:");
-    scanf("%sl", &admissionScore);
+    scanf("%lf", &admissionScore);
     printf("%s1:", Grade);
     scanf("%lf", &grade1);
     printf("%s2:", Grade);
