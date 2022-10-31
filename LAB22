@@ -20,8 +20,11 @@ int main()
 		scanf("%lf", &left_boundary_a);
 		printf("\n\tEnter the right boundary\n\t\tX(last)=");
 		scanf("%lf", &right_boundary_b);
-    for(left_boundary_a;left_boundary_a==0;left_boundary_a=-4.5);
-    for(right_boundary_b;right_boundary_b==0;right_boundary_b=10);
+    while(left_boundary_a==right_boundary_b)
+    {
+        left_boundary_a=-4.5;
+        right_boundary_b=10;
+    }
 	do
 	{
 		printf("\n\tEnter the number of partition intervals (N>0)\n\t\tN=");
