@@ -1,0 +1,99 @@
+```ruby
+#include <stdio.h>
+#include <stdlib.h>
+double matrix_func1(int[], int[], int[]);
+double function5(double val1, double val2, double val3, double val4)
+{
+/*    if(val1>val2 && val1>val3 && val1>val4)
+        return val1;
+    else if (val2>val1 && val2>val3 && val2>val4)
+        return val2;
+    else if (val3>val1 && val3>val2 && val3>val4)
+        return val3;
+    else return val4;*/
+        val1 = (val1*100>val2 ? val1:val2);
+        val1 = (val1>val3 ? val1:val3);
+        val1 = (val1>val4 ? val1:val4);
+        return val1;
+}
+int func3( void )
+{
+return 1;
+return 2;
+return 3;
+}
+
+void func4( int y)
+{
+return;
+y *= y;
+printf("―y=%d", y);
+}
+
+void hellworld(unsigned int value245)
+{
+    while(value245){
+    printf("Hello World\n");
+    value245--;
+    }
+}
+
+int main()
+{
+
+    func3();
+    printf("%lf\n", function5(4,50,30,60));
+    func4(3);
+    hellworld(5);
+    printf("%d\n", func2());
+    //int a = 6, b = 7, x = -5;
+    int ar1[5] = {1, 2, 3, 4, 5};
+    int ar2[5] = {2, 3, 4, 5, 1};
+    int ar3[5] = {3, 4, 5, 1, 2};
+    printf("\n");
+    for (unsigned int i=0; i<5; i++)
+    {
+        printf("%d ", ar1[i]);
+    }
+    printf("\n");
+    for (unsigned int i=0; i<5; i++)
+    {
+        printf("%d ", ar2[i]);
+    }
+    printf("\n");
+    for (unsigned int i=0; i<5; i++)
+    {
+        printf("%d ", ar3[i]);
+    }
+
+    printf("\n");
+    printf(" %d %d %d %d %d \n %d %d %d %d %d \n %d %d %d %d %d ", ar1[0], ar1[1], ar1[2], ar1[3], ar1[4], ar2[0], ar2[1], ar2[2], ar2[3], ar2[4], ar3[0], ar3[1], ar3[2], ar3[3], ar3[4]);
+    printf("\nHello world!\n");
+    printf("\n%d", func(-400));
+    printf("\nval = %d",abs(-5));
+    printf("\n%d", func5(6,7));
+    return 0;
+}
+
+int func2( void )
+{
+int a = 2;
+int b = 5;
+int c = 12;
+return a, b;
+}
+int func (int x)
+{
+    return (x < 0) ? -x:x;
+}
+
+int func5( int a, int b )
+{
+return (a >= b) ? a : b;
+}
+
+double matrix_func1(int* ar1, int* ar2, int* ar3)
+{
+
+}
+```
