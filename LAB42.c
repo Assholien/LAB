@@ -9,7 +9,7 @@ void max_min(const int **, int, int**, int, int, char[]);
 void transpose_b(const int**, int, int);
 void fill_int_array(int**, int, int, char[]);
 void print_int_array(const int**, int, int);
-void mult_a_b (const int**, int**, int, int);
+void mult_a_b (const int**, int**, int, int, char[]);
 
 int main()
 {
@@ -156,7 +156,7 @@ int main()
                     strcasecmp(qa0,"mult")==0 ||
                     strcasecmp(qa0,"times")==0 ||
                     strcasecmp(qa0,"axb")==0
-                    ) mult_a_b(A, B, rows, cols);
+                    ) mult_a_b(A, B, rows, cols, qa1);
             else if (
                     strcasecmp(qa0,"other")==0 ||
                     strcasecmp(qa0,"another")==0 ||
@@ -248,23 +248,26 @@ void transpose_b(const int** B, int rows, int cols)
     clearMemory(transposed, trows);
 }
 
-void mult_a_b (const int** A, int** B, int rows, int cols)
+void mult_a_b (const int** A, int** B, int rows, int cols, char qa1[100])
 {
-    int** mult = memory_allocation(rows, cols);
-    for(int i=0;i<rows;i++)
+    if (strcmp(qa1,"n")==0)
     {
-        for(int j=0;j<cols;j++)
+        int** mult = memory_allocation(rows, cols);
+        for(int i=0;i<rows;i++)
         {
-            mult[i][j]=0;
-            for(int k=0;k<rows;k++)
+            for(int j=0;j<cols;j++)
             {
-                mult[i][j]+=A[i][k]*B[k][j];
+                mult[i][j]=0;
+                for(int k=0;k<rows;k++)
+                {
+                    mult[i][j]+=A[i][k]*B[k][j];
+                }
             }
         }
+        printf("\tResult:\n");
+        print_int_array(mult, rows, cols);
+        clearMemory(mult, rows);
     }
-    printf("\tResult:\n");
-    print_int_array(mult, rows, cols);
-    clearMemory(mult, rows);
 }
 
 void max_min(const int** A, int qrc, int** B, int rows, int cols, char qa0[100])
