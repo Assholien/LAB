@@ -142,7 +142,7 @@ int main()
                     );
             if(
                 strcasecmp(qa0,"max")==0 ||
-                strcasecmp(qa0,"maxmimum")==0
+                strcasecmp(qa0,"maximum")==0
                 ) max_min(A, qrc, B, rows, cols, qa0);
             else if (
                     strcasecmp(qa0,"min")==0 ||
@@ -274,7 +274,7 @@ void max_min(const int** A, int qrc, int** B, int rows, int cols, char qa0[100])
 {
     int A_min_max = A[0][0];
     int B_min_max = B[0][0];
-    if(strcasecmp(qa0,"max")==0 || strcasecmp(qa0,"maxmimum")==0)
+    if(strcasecmp(qa0,"max")==0 || strcasecmp(qa0,"maximum")==0)
     {
         for(int i=0; i<qrc; i++)
         {
