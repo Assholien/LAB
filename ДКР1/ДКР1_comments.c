@@ -9,16 +9,16 @@ int main()
     unsigned int continue_value = 1;
     while(continue_value==1)
     //while(strcasecmp(continue_char,"n")!=0)
-    {
-    int N=1;
-    double sum=0, a=0, value_too_high=1;//, checksum=0;
-    do
-    {
+        {
+        int N=1;
+        double sum=0, a=0, value_too_high=1;//, checksum=0;
         do
         {
-            printf("Enter N\t");
-            scanf("%d", &N);
-        } while(N<1 && N<0);
+            do
+            {
+                printf("Enter N\t");
+                scanf("%d", &N);
+            } while(N<1); //&& N<0); //wanted to make it work with unsigned int. Oh, well...
             printf("Enter a\t");
             scanf("%lf", &a);
             //a = 10000000000000000000;
@@ -32,7 +32,7 @@ int main()
             //printf("\t%d\t%g", N, a);
             //printf("%g", value_too_high);
             if (value_too_high>1e+308) printf("Sorry, this combination is just too much to handle. Try again?\n");
-    } while(value_too_high>1e+308);
+        } while(value_too_high>1e+308);
         for(int n=1; n<=N; n++)
         {
             double temp_sum=0;//, checksum_temp=0;
@@ -53,7 +53,7 @@ int main()
             //printf("\n\niteration - %d\ntemp_a\n%g\ntemp_a_test\n%g\ntemp_sum\n%g\nchecksum_temp\n%g\nsum\n%g\nchecksum\n%g", n, temp_a, temp_a_test, temp_sum, checksum_temp, sum, checksum);
             //printf("\n\niteration - %d\ntemp_a\n%g\ntemp_sum\n%g\nsum\n%g\n", n, temp_a, temp_sum, sum);
         }
-            sum++;//, checksum++;
+        sum++;//, checksum++;
         //printf("\n\tsum\n\t\t%g\n\tchecksum\n\t\t%g\n", sum, checksum);
         printf("\n\tsum\n\t\t%g\n", sum);
         //printf("\n\tsum\n\t\t%lf\n", sum);
@@ -63,6 +63,6 @@ int main()
             //scanf("%s", continue_char);
             scanf("%u", &continue_value);
         } while(continue_value !=1 && continue_value !=2);//while(strcasecmp(continue_char,"y")!=0 && strcasecmp(continue_char,"n")!=0);
-        }
+    }
     return 0;
 }
