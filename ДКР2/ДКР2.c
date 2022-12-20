@@ -52,7 +52,7 @@ void matrix_find_bigger_value_below_main_diagonal_func()
             for (int j=0; j<N; j++)
             {
                 int matrix_value;
-                printf("\t\tEnter your value for [%d][%d]\t", i, j);
+                printf("\t\tEnter your value for [%d][%d]\t", i+1, j+1);
                 scanf(" %d", &matrix_value);
                 A[i][j] = matrix_value;
             }
