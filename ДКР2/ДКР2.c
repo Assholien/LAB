@@ -17,7 +17,7 @@ int main()
     char auto_fill;
     do
     {
-        printf("\n\t\t\To auto-fill, or not?\tY/N\t");
+        printf("\n\t\tTo auto-fill, or not?\tY/N\t");
         scanf(" %c", &auto_fill);
     }
     while (auto_fill!='y' && auto_fill!='Y' && auto_fill!='n' && auto_fill!='N');
