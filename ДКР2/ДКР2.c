@@ -23,15 +23,11 @@ int main()
     while (auto_fill!='y' && auto_fill!='Y' && auto_fill!='n' && auto_fill!='N');
     // filling matrix with stuff
     if (auto_fill=='y' || auto_fill=='Y')
-    {
         matrix_autofill (A, N);
-    }
     else if (auto_fill=='n' || auto_fill=='N')
-    {
         matrix_manualfill (A, N);
-    }
     system("cls");
-    matrix_print (A, N); // printing
+    matrix_print (A, N); // printing matrix
     int increment = 1, max_temp=0;
     matrix_find_bigger_values_below_main_diagonal (A, N, &increment, &max_temp); // looking for bigger numbers on and below main diagonal
     matrix_print_bigger_values (A, N, &increment, &max_temp); // actually printing out all the numbers based on info from the last function
@@ -73,7 +69,7 @@ void matrix_autofill (int**A, int N)
 {
     for (int i=0; i<N; i++)
         for (int j=0; j<N; j++)
-            A[i][j] = rand()%9999999;
+            A[i][j] = rand()%9999999; // dunno why this, can make any value work tbh
 }
 
 void matrix_manualfill (int** A, int N)
@@ -119,7 +115,7 @@ void matrix_print (const int** A, int N)
 
 void matrix_find_bigger_values_below_main_diagonal (int** A, int N, int* increment, int* max_temp)
 {
-    int increment_temp=1, decrement = N-1, max_temp_temp=0;
+    int increment_temp=0, decrement = N-1, max_temp_temp=0;
     for (int i=decrement; i>=0; i--)
     {
         for (int j=decrement; j>=0; j--)
@@ -127,7 +123,10 @@ void matrix_find_bigger_values_below_main_diagonal (int** A, int N, int* increme
             if (max_temp_temp==A[i][j])
                 increment_temp++;
             else if (max_temp_temp<A[i][j])
+            {
                 max_temp_temp=A[i][j];
+                increment_temp=1;
+            }
         }
         decrement--;
     }
@@ -137,10 +136,10 @@ void matrix_find_bigger_values_below_main_diagonal (int** A, int N, int* increme
 
 void matrix_print_bigger_values (int** A, int N, int* increment_pointer, int* max_pointer)
 {
-    int k = 1, increment_temp = *increment_pointer, increment = *increment_pointer, max_temp = *max_pointer;
-    for (int i=0; i<N; i++)
+    int search_value = 1, k = 1, increment_temp = *increment_pointer, increment = *increment_pointer, max_temp = *max_pointer;
+    for (int i=0; i<search_value; i++)
     {
-        for (int j=0; j<N; j++)
+        for (int j=0; j<search_value; j++)
         {
             if (max_temp==A[i][j] && increment>=0 && increment_temp!=1)
             {
@@ -157,8 +156,9 @@ void matrix_print_bigger_values (int** A, int N, int* increment_pointer, int* ma
                 break;
             }
         }
-        if (increment==1 && increment_temp==0 || increment==0)
+        if (increment==1 && increment_temp==0 || increment==0 || search_value==N)
             break;
+        search_value++;
     }
 }
 
