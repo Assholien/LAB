@@ -32,9 +32,9 @@ int main()
     }
     system("cls");
     matrix_print (A, N); // printing
-    int* increment=NULL, max_temp=NULL;
+    int increment = 1, max_temp=0;
     matrix_find_bigger_values_below_main_diagonal (A, N, &increment, &max_temp); // looking for bigger numbers on and below main diagonal
-    matrix_print_bigger_values (A, N, increment, max_temp); // actually printing out all the numbers based on info from the last function
+    matrix_print_bigger_values (A, N, &increment, &max_temp); // actually printing out all the numbers based on info from the last function
     matrix_clear (A, N);
     return 0;
 }
@@ -135,10 +135,10 @@ void matrix_find_bigger_values_below_main_diagonal (int** A, int N, int* increme
     *max_temp = max_temp_temp;
 }
 
-void matrix_print_bigger_values (int** A, int N, int* increment, int* max_temp)
+void matrix_print_bigger_values (int** A, int N, int* increment_pointer, int* max_pointer)
 {
     int k = 1;
-    int increment_temp = increment;
+    int increment_temp = *increment_pointer, increment = *increment_pointer, max_temp = *max_pointer;
     for (int i=0; i<N; i++)
     {
         for (int j=0; j<N; j++)
