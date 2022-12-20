@@ -137,8 +137,7 @@ void matrix_find_bigger_values_below_main_diagonal (int** A, int N, int* increme
 
 void matrix_print_bigger_values (int** A, int N, int* increment_pointer, int* max_pointer)
 {
-    int k = 1;
-    int increment_temp = *increment_pointer, increment = *increment_pointer, max_temp = *max_pointer;
+    int k = 1, increment_temp = *increment_pointer, increment = *increment_pointer, max_temp = *max_pointer;
     for (int i=0; i<N; i++)
     {
         for (int j=0; j<N; j++)
