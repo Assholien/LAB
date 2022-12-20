@@ -67,9 +67,9 @@ void matrix_find_bigger_value_below_main_diagonal_func()
             for (int j=0; j<N+1; j++)
             {
                 if (j==0)
-                    printf("#\t");
+                    printf("#");
                 else
-                    printf("%d\t", j);
+                    printf("\t%d", j);
             }
             printf("\n");
         }
