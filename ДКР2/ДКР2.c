@@ -37,18 +37,30 @@ int main()
 
 int matrix_size()
 {
-    int N=1;
+    int N=0;
+    char continue_char;
     do
     {
-        printf("\tHow large your quadratic matrix should be?\t");
-        scanf(" %d", &N);
         if (N==1)
-        {
             printf("\n\tMatrix 1x1 has only one value in it. How do you expect me to find bigger value out of only one?\t");
-            scanf(" %d", &N);
+        else if (N>14)
+        {
+            do
+            {
+                printf("\n\tWon't fit windows terminal. Continue?\tY/N\t");
+                scanf(" %c", &continue_char);
+                if (continue_char=='y' || continue_char=='Y')
+                    break;
+            }
+            while (continue_char!='y' && continue_char!='Y' && continue_char!='n' && continue_char!='N');
+                if (continue_char=='y' || continue_char=='Y')
+                    break;
         }
+        if (N==0 || continue_char=='n' || N>14 && continue_char=='N')
+            printf("\tHow large your quadratic matrix should be?\t");
+        scanf(" %d", &N);
     }
-    while (N<=0 || N>14); // yep, just to fit windows terminal
+    while (N<=1 || N>14); // yep, just to fit windows terminal
     return N;
 }
 
