@@ -47,20 +47,18 @@ int matrix_size()
         {
             do
             {
-                printf("\n\tWon't fit windows terminal. Continue?\tY/N\t");
+                printf("\n\tMight not fit windows terminal properly. Continue?\tY/N\t");
                 scanf(" %c", &continue_char);
-                if (continue_char=='y' || continue_char=='Y')
-                    break;
             }
             while (continue_char!='y' && continue_char!='Y' && continue_char!='n' && continue_char!='N');
-                if (continue_char=='y' || continue_char=='Y')
-                    break;
+            if (continue_char=='y' || continue_char=='Y')
+                break;
         }
-        if (N==0 || continue_char=='n' || N>14 && continue_char=='N')
+        if (N==0 || continue_char=='n' || continue_char=='N')
             printf("\tHow large your quadratic matrix should be?\t");
         scanf(" %d", &N);
     }
-    while (N<=1 || N>14); // yep, just to fit windows terminal
+    while (N<=1 || N>14); // a double-check if you want to fill only the terminal
     return N;
 }
 
