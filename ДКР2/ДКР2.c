@@ -160,11 +160,14 @@ void matrix_print_bigger_values (int** A, int N, int* increment, int* max, int* 
         {
             for (int j=0; j<search_value; j++)
             {
-                printf("\nMax Value #%d: [%d][%d] %d", k, i+1, j+1, *max);
-                if (*increment==0)
-                    break;
-                *increment--;
-                k++;
+                if (A[i][j]==*max)
+                {
+                    printf("\nMax Value #%d: [%d][%d] %d", k, i+1, j+1, *max);
+                    if (*increment==0)
+                        break;
+                    *increment-=1;
+                    k++;
+                }
             }
             if (*increment==0 || search_value==N)
                 break;
