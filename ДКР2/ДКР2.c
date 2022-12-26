@@ -165,7 +165,7 @@ void matrix_print_bigger_values (int** A, int N, int* increment, int* max, int* 
                     printf("\nMax Value #%d: [%d][%d] %d", k, i+1, j+1, *max);
                     if (*increment==0)
                         break;
-                    *increment-=1;
+                    --*increment;
                     k++;
                 }
             }
