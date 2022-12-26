@@ -141,6 +141,7 @@ void matrix_find_bigger_values_below_main_diagonal (int** A, int N, int* increme
             }
         }
         decrement--;
+
     }
     *increment = increment_temp;
     *max = max_temp;
@@ -159,11 +160,11 @@ void matrix_print_bigger_values (int** A, int N, int* increment, int* max, int* 
         {
             for (int j=0; j<search_value; j++)
             {
-                    printf("\nMax Value #%d: [%d][%d] %d", k, i+1, j+1, *max);
-                    if (*increment==0)
-                        break;
-                    *increment--;
-                    k++;
+                printf("\nMax Value #%d: [%d][%d] %d", k, i+1, j+1, *max);
+                if (*increment==0)
+                    break;
+                *increment--;
+                k++;
             }
             if (*increment==0 || search_value==N)
                 break;
