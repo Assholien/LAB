@@ -1,0 +1,52 @@
+# depslib dependency file v1.0
+1672103228 source:m:\kpi\labs\programming\dkr2_new\prototypes.c
+
+1672264922 source:m:\kpi\labs\programming\dkr2_new\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1672108506 source:m:\kpi\labs\programming\dkr2_new\matrix_bigger_values.c
+	<stdio.h>
+	<stdlib.h>
+
+1672105126 source:m:\kpi\labs\programming\dkr2_new\functions.c
+	<stdio.h>
+	<stdlib.h>
+
+1672108392 source:m:\kpi\labs\programming\dkr2_new\matrix_fill.c
+	<stdio.h>
+	<stdlib.h>
+
+1672199006 source:m:\kpi\labs\programming\dkr2_new\sum_count.c
+	<stdio.h>
+	<stdlib.h>
+
+1672105126 source:m:\kpi\labs\programming\dkr\functions.c
+	<stdio.h>
+	<stdlib.h>
+
+1672264922 source:m:\kpi\labs\programming\dkr\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1672108506 source:m:\kpi\labs\programming\dkr\matrix_bigger_values.c
+	<stdio.h>
+	<stdlib.h>
+
+1672108392 source:m:\kpi\labs\programming\dkr\matrix_fill.c
+	<stdio.h>
+	<stdlib.h>
+
+1672199006 source:m:\kpi\labs\programming\dkr\sum_count.c
+	<stdio.h>
+	<stdlib.h>
+
+1672271416 source:m:\kpi\labs\programming\dkr\top_eight_letters_in_file.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1672268230 source:m:\kpi\labs\programming\dkr\matrix_functions.c
+	<stdio.h>
+	<stdlib.h>
+
