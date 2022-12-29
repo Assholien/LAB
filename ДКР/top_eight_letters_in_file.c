@@ -8,7 +8,7 @@ void top_eight_letters_in_file()
     if (text_file==NULL)
     {
         printf("File doesn't exist in current directory. Please, create text.txt and put something in.");
-        exit(0);
+        return;
     }
     const char number_of_letters = 26;
     unsigned int N=0, d=NULL, C[2][number_of_letters*2];
@@ -19,7 +19,13 @@ void top_eight_letters_in_file()
         if (d==10) // for some reason, if the character is LF (10), it won't increment N. But at the same time, it's somehow stored inside the array... Even though array's suppose to be smaller. \o/
             N++;
     }
-    N--;
+    if (N==1)
+    {
+        printf("Error. Your file has nothing in it.");
+        return;
+    }
+    else if (N>1)
+        N--;
     rewind (text_file);
     char A[N];
     for (int i=0; i<N; i++) // writing all the characters into array, using info from previous run. Efficient? No

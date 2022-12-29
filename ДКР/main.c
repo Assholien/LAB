@@ -18,6 +18,8 @@ int main()
         {
             int N = matrix_size();
             int** A = matrix_make (N);
+            if (A==NULL)
+                continue;
             char auto_fill;
             do
             {

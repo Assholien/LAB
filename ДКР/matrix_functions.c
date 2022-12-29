@@ -34,10 +34,7 @@ int** matrix_make (int N)
     for (int i=0; i<N; i++)
         A[i] = (int*) malloc (N* sizeof(int));
     if (A==NULL)
-    {
         printf("\n\t\tMemory allocation failed");
-        exit(0);
-    }
     return A;
 }
 
