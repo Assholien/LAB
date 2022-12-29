@@ -10,9 +10,8 @@ void top_eight_letters_in_file()
         printf("File doesn't exist in current directory. Please, create text.txt and put something in.");
         exit(0);
     }
-    int N=-1;
-    const int number_of_letters = 26;
-    int d=NULL, C[2][number_of_letters*2];
+    const char number_of_letters = 26;
+    unsigned int N=0, d=NULL, C[2][number_of_letters*2];
     while (d!=EOF) // getting the number of characters in file, before it reaches the End Of File
     {
         d = getc(text_file);
@@ -20,12 +19,13 @@ void top_eight_letters_in_file()
         if (d==10) // for some reason, if the character is LF (10), it won't increment N. But at the same time, it's somehow stored inside the array... Even though array's suppose to be smaller. \o/
             N++;
     }
+    N--;
     rewind (text_file);
-    int A[N];
+    char A[N];
     for (int i=0; i<N; i++) // writing all the characters into array, using info from previous run. Efficient? No
         A[i] = getc(text_file);
     fclose (text_file);
-    char printing_text_choice='k';
+    char printing_text_choice='u';
     do
     {
         printf("Do you want to see your text in console as well?\tY/N\t");
@@ -48,7 +48,7 @@ void top_eight_letters_in_file()
         case 110:
             break;
     }
-    printf("\n\nYour text is %d symbols long\n\n", N);
+    printf("\n\nYour text is %u symbols long\n\n", N);
     for (int i=0; i<number_of_letters; i++) // filling a look-up array with ASCII symbols and 0es
     {
         C[0][i] = 65 + i;
@@ -91,8 +91,12 @@ void top_eight_letters_in_file()
                 }
                 else if (i==0)
                     printf("\nTOP 8 Letters in your file:\n");
-                if (C[1][i]>0)
-                    printf("Letter #%d: %c, it's been here %d times.\n", i+1, C[0][i], C[1][i]);
+                if (C[1][i]>2)
+                    printf("Letter #%d: %c, it's been here %u times.\n", i+1, C[0][i], C[1][i]);
+                else if (C[1][i]==2)
+                    printf("Letter #%d: %c, it's been here twice.\n", i+1, C[0][i]);
+                else if (C[1][i]==1)
+                    printf("Letter #%d: %c, it's been here only once.\n", i+1, C[0][i]);
                 else if (C[1][i]==0)
                     {
                         printf("Couldn't find any other letter.");
@@ -112,8 +116,12 @@ void top_eight_letters_in_file()
                 }
                 else if (i==0)
                     printf("\nLetter frequency of your file:\n");
-                if (C[1][i]>0)
-                    printf("Letter #%d: %c, it's been here %d times.\n", i+1, C[0][i], C[1][i]);
+                if (C[1][i]>2)
+                    printf("Letter #%d: %c, it's been here %u times.\n", i+1, C[0][i], C[1][i]);
+                else if (C[1][i]==2)
+                    printf("Letter #%d: %c, it's been here twice.\n", i+1, C[0][i]);
+                else if (C[1][i]==1)
+                    printf("Letter #%d: %c, it's been here only once.\n", i+1, C[0][i]);
                 else if (C[1][i]==0)
                     {
                         printf("Couldn't find any other letter.");
