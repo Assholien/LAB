@@ -3,7 +3,7 @@
 
 void matrix_find_bigger_values_below_main_diagonal (int** A, int N, int* increment, int* max, int* pointer_i, int* pointer_j)
 {
-    int increment_temp=0, decrement = N-1, max_temp=0, temp_i=0, temp_j=0;
+    int increment_temp=0, decrement = N-1, max_temp=0, temp_i=decrement, temp_j=decrement;
     for (int i=decrement; i>=0; i--)
     {
         for (int j=decrement; j>=0; j--)
